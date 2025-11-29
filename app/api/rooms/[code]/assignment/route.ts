@@ -24,7 +24,7 @@ const roomId = roomResult.rows[0].id
 // Step 2: Get the Receiver's Name
 // Now we only need to join 2 tables (Assignments + Users) which is much cleaner
 const assignmentResult = await query(
-  `SELECT u.name as giftee_name 
+  `SELECT u.name as giftee_name, u.id as giftee_id 
    FROM assignments a
    JOIN users u ON a.receiver_id = u.id
    WHERE a.room_id = $1 AND a.giver_id = $2`,
@@ -35,6 +35,9 @@ const assignmentResult = await query(
     return NextResponse.json({ error: "Assignment not found" }, { status: 404 })
   }
 
-  const assignment = { giftee_name: assignmentResult.rows[0].giftee_name }
+  const assignment = { 
+    giftee_name: assignmentResult.rows[0].giftee_name,
+    giftee_id: assignmentResult.rows[0].giftee_id 
+  }
   return NextResponse.json({ assignment })
 }
