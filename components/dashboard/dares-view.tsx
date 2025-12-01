@@ -122,7 +122,7 @@ export function DaresView() {
             >
               <div className="flex gap-4">
                 <Avatar className="h-12 w-12">
-                  <AvatarImage src={dare.sender_avatar || undefined} />
+                  <AvatarImage src={"Santa"} />
                   {/* <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground">
                     {dare.sender_name.charAt(0)}
                   </AvatarFallback> */}
