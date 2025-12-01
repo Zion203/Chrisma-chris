@@ -123,15 +123,15 @@ export function DaresView() {
               <div className="flex gap-4">
                 <Avatar className="h-12 w-12">
                   <AvatarImage src={dare.sender_avatar || undefined} />
-                  <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground">
+                  {/* <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground">
                     {dare.sender_name.charAt(0)}
-                  </AvatarFallback>
+                  </AvatarFallback> */}
                 </Avatar>
 
                 <div className="flex-1 space-y-2">
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-semibold text-primary">{dare.sender_name}</span>
+                      <span className="font-semibold text-primary">Your Santa</span>
                       <span className="text-sm text-muted-foreground">•</span>
                       <span className="text-sm text-muted-foreground">{dare.room_name}</span>
                       {!dare.is_read && (
